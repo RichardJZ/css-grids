@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+
+	<style>
+
+	::root{
+	--light-brown :rgb(220, 223, 153) ;
+
+
+	}
+		.container{
+		max-width:1040px;
+		width:100%;
+		margin:0 auto;		
+		display:grid;
+		grid-template-rows: 22px 50px 95vh 222px 400px 222px repeat(3, 400px ) 300px;
+
+		grid-template-columns: 22px 150px  repeat(11, 1fr) 150px 22px;
+		}
+
+
+/*
+		.outer-frame{
+			background:beige;
+		}
+		*/
+
+		.header-bar--1{
+			
+		grid-row: 1 / 3;
+		grid-column: 1 /4;
+		color:white;
+		z-index:10;
+
+		}
+.header-bar--1, .header-bar--3{
+	font-size:2rem;
+	color:white;
+}
+
+.header-bar{
+	display:inline;
+	text-align:center;
+	vertical-align:center;
+}
+/*
+		.header-bar--1B{
+			
+		grid-row: 2 / 3;
+		grid-column: 1 /4;
+		color:white;
+		z-index:10;
+		}
+ */
+
+
+			.header-bar--2{
+				
+				
+			
+		grid-row: 1 / 2;
+		grid-column: 4 /13;
+		color:white;
+		
+
+		}
+
+
+	
+		.outer-frame{
+		background: rgb(220, 223, 153);
+
+		}
+
+			.header-bar--3{
+			
+		grid-row: 1 / 3;
+		grid-column: 13 /16;
+		color:white;
+		z-index:10;
+
+		}
+
+	/*			.header-bar--3B{
+			
+		grid-row: 2 / 3;
+		grid-column: 12 /-1;
+		color:white;
+		z-index:10;
+
+		}
+*/
+		.left-side-bar{
+		
+		grid-column:1 /2;
+		grid-row: 2/-1;
+
+		}
+
+	.right-side-bar{
+			
+		grid-column:15 /16;
+		grid-row: 2/-1;
+
+		}
+	.bottom-bar{
+		grid-row: 10/-1;
+		grid-column: 2 / -1;
+	}
+
+.thin-overlay{
+
+background-color: rgba(0,0,0,0.5);
+		width:100%;
+		height:100%;
+			clip-path:polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+			-webkit-backspace-visibility: hidden;
+		transition:.5s;
+}
+
+
+.thin-overlay:hover{
+clip-path:polygon(0 0, 100% 0, 100% 15%, 0 100%, 0 100%);
+background-color: rgba(0,0,0,0.1);}
+
+
+	.hero-content{
+background:url(images/bathroom1.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+
+	grid-row: 2 / 4;
+	grid-column: 2 / 15;
+	
+
+}
+	.hero-content:hover >.thin-overlay{
+clip-path:polygon(0 0, 100% 0, 100% 15%, 0 100%, 0 100%);
+background-color: rgba(0,0,0,0.1);
+}
+
+.hero-content--text{
+font-family:Helvetica, Arial, sans-serif ;
+font-size: 78px; 
+line-height: 78px ;
+vertical-align: baseline ;
+letter-spacing: normal; 
+word-spacing: 0px; 
+font-weight: 400 ;
+font-style: normal; 
+font-variant: normal ;
+text-transform: uppercase; 
+text-decoration: none; 
+text-align: center ;
+text-indent: 0px ;
+color:white;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:0;
+}
+
+.hero-content--text-sub{
+font-size:26px;
+
+}
+
+.wrapper--content-boxes{
+grid-row:5 / 6;
+grid-column:2 / 15;
+width:100%;
+display:grid;
+grid-template-columns: repeat(13, 1fr);
+grid-template-rows: repeat(8, 1fr);
+}
+
+
+.right-content-box--1{
+	background:url(images/meeting.jpg);
+	grid-row:1/ 2;
+	grid-column: 6 / 14;
+
+}
+
+.left-content-box--1{
+	grid-row:1/ 2;
+	grid-column: 1 / 6;
+
+}
+
+.left-content-box--2{
+	background:url(images/claus.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	grid-row:3/ 4;
+	grid-column: 1 / 9;
+}
+
+
+.right-content-box--2{
+	grid-row:3/ 4;
+	grid-column: 9/ 14;
+}
+
+
+.text-box{
+	margin:10%;
+	align-self:center;
+
+}
+
+.text-box--title{
+	font-size:1.5rem;
+	font-weight:100;
+	text-align:center;
+
+}
+
+
+
+@media screen and (max-width: 457px){
+
+.container{	
+
+		width:100%;
+		margin:0 auto;		
+		grid-template-rows: 50px 95vh 222px 400px 222px repeat(3, 400px ) 300px;
+		grid-template-columns: 1fr;
+		}
+
+
+	.header-bar--1{
+			
+		grid-row: 1 / 2;
+		grid-column: 1 / 2;
+		color:white;
+		
+
+		}
+
+
+			.header-bar--2{
+				
+				
+			
+		grid-row: none;
+		grid-column: none;
+		
+		
+
+		}
+
+	.header-bar--3{
+			
+		grid-row: 1 / 2;
+		grid-column: 1 / 2;
+		color:white;
+		z-index:10;
+		}
+
+	.left-side-bar{
+		grid-row: none;
+		grid-column: none;
+		z-index:-2;
+
+		}
+	.hero-content{
+background:url(images/bathroom1.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+
+	grid-row: 2 / 3;
+	grid-column: 1 / -1;
+	
+
+}
+
+.hero-content--text{
+font-size:39px;
+font-weight:500;
+line-height:50px;}
+
+
+.wrapper--content-boxes{
+grid-row:4 / -1;
+grid-column:1 / -1;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(10, minmax(400px, min-content));
+grid-gap:30px;
+}
+
+
+.left-content-box--1{	
+	grid-column: 1;
+	grid-row: 1/ 2;
+}
+
+.right-content-box--1{
+	grid-column: 1;
+	grid-row: 2/ 3;
+}
+.right-content-box--2{
+	grid-column: 1;
+	grid-row: 3/ 4;
+}
+
+.left-content-box--2{	
+	grid-column: 1;
+	grid-row: 4/ 5;
+}
+
+
+
+}
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="box header-bar header-bar--1 outer-frame">contact</div>
+
+<!-- <div class="box header-bar--1B outer-frame"></div> -->
+
+<div class="box header-bar--2 outer-frame">
+
+</div>
+<div class="box header-bar--3 outer-frame">menu</div>
+
+
+<div class="box left-side-bar outer-frame"></div>
+<div class="box right-side-bar outer-frame"></div>
+
+	<div class="box hero-content">
+		<div class="hero-content--text">kwaliteit <div class="hero-content--text-sub">is bij ons nummer 1</div> </div>
+		<div class="thin-overlay"></div>
+	
+
+
+		
+
+			
+	
+
+
+	
+
+</div>
+
+<div class="wrapper--content-boxes">
+	<div class="box left-content-box--1 text-box"><p class="text-box--title">Wij bereiken onze doelen door constant evoluerend teamwork </p>Quisque a tempor nibh. Nulla fringilla sagittis urna quis ultricies. Cras tincidunt sed sem eu feugiat. Nunc a dui vehicula, molestie dolor sit amet, fermentum ligula. In finibus pharetra mi, eu consectetur est posuere ac. In ullamcorper mollis erat non aliquet. Nam elementum faucibus suscipit. Nulla lectus ligula, tincidunt ut vehicula eget, faucibus at eros. Quisque sed diam sed quam elementum condimentum. </div>
+	<div class="box right-content-box--1 image-box"></div>
+	
+<div class="box left-content-box--2 image-box"></div>
+
+
+<div class="box left-content-box--3 text-box"></div>
+<div class="box left-content-box--4 image-box"></div>
+
+
+
+
+
+<div class="box right-content-box--2 text-box"><p class="text-box--title">Rijk scala aan badkamer uitvoeringen </p>Quisque a tempor nibh. Nulla fringilla sagittis urna quis ultricies. Cras tincidunt sed sem eu feugiat. Nunc a dui vehicula, molestie dolor sit amet, fermentum ligula. In finibus pharetra mi, eu consectetur est posuere ac. In ullamcorper mollis erat non aliquet. Nam elementum faucibus suscipit. Nulla lectus ligula, tincidunt ut vehicula eget, faucibus at eros. Quisque sed diam sed quam elementum condimentum.</div>
+<div class="box right-content-box--3 image-box"></div>
+<div class="box right-content-box--4 text-box"></div>
+
+
+</div>
+
+<div class="box footer"></div>
+<div class="box bottom-bar outer-frame"></div>
+
+</div>
+
+
+	
+</body>
+</html>
